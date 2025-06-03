@@ -2,5 +2,5 @@
   "name": "shy-dew-c896",
   "compatibility_date": "2025-06-03",
   "main": "src/index.ts",
-  "assets": { "directory": "./dist" }
-},
+  "assets": { "directory": "./dist" },
+}
