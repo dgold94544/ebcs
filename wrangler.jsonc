@@ -1,7 +1,7 @@
 {
   "name": "shy-dew-c896",
   "compatibility_date": "2025-06-03", 
-  "main": "./dist/assets/js/main.js",
+  "main": "main.js",
   "assets": {
     "directory": "./dist/assets",
     "not_found_handling": "404-page"
