@@ -45,6 +45,3 @@ async function handleRequest(request) {
             });
 
         })(jQuery);
-    };
-    
-});
