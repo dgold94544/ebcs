@@ -3,11 +3,6 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
-	var script = window.createElement('script');
-		script.src = 'https://code.jquery.com/jquery-3.7.1.min.js';
-		window.head.appendChild(script);
-		
 		
 (function($) {
 
@@ -160,5 +155,13 @@
 
 			}
 		});
+		
+		
+		
+	var script = window.createElement('script');
+		script.src = 'https://code.jquery.com/jquery-3.7.1.min.js';
+		window.head.appendChild(script);
+		
+
 
 })(jQuery);
