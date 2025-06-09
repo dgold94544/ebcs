@@ -4,7 +4,11 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-
+	var script = window.createElement('script');
+		script.src = 'https://code.jquery.com/jquery-3.7.1.min.js';
+		window.head.appendChild(script);
+		
+		
 (function($) {
 
 	var $window = $(window),
@@ -22,10 +26,6 @@
 			small:    [ '481px',   '736px'  ],
 			xsmall:   [ null,      '480px'  ],
 		});
-		
-	var script = window.createElement('script');
-		script.src = 'https://code.jquery.com/jquery-3.7.1.min.js';
-		window.head.appendChild(script);
 
 	// Play initial animations on page load.
 		$window.on('load', function() {
