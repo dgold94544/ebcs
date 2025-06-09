@@ -1,10 +1,14 @@
-// Ensure the script runs after the DOM is ready
-document.addEventListener("DOMContentLoaded", function() {
-    // Dynamically load jQuery
-    var script = document.createElement('script');
-    script.src = 'https://code.jquery.com/jquery-3.7.1.min.js';
-    script.onload = function() {
-        console.log("jQuery loaded successfully");
+
+addEventListener("fetch", event => {
+    event.respondWith(handleRequest(event.request));
+});
+
+async function handleRequest(request) {
+    return new Response("Hello from Cloudflare Worker!", {
+        headers: { "content-type": "text/plain" }
+    });
+}
+
 
         // Now that jQuery is available, initialize your functions
         (function($) {
