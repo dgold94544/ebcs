@@ -47,5 +47,4 @@ async function handleRequest(request) {
         })(jQuery);
     };
     
-    document.head.appendChild(script);
 });
