@@ -3,9 +3,6 @@
   "type": "module",
   "compatibility_date": "2025-06-16", 
   "main": "assets/js/main.js",
-  "site": {
-     "bucket": "./dist"
-  },
   "assets": {
     "directory": "assets",
     "not_found_handling": "404-page"
