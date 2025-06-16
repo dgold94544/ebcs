@@ -8,7 +8,15 @@ async function handleRequest(request) {
     <html>
       <head>
         <meta charset="UTF-8">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<!-- Scripts -->
+			<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 		<title>East Bay Communication Systems &#8211; Serving volunteer radio.</title>
 		<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 		<meta charset="utf-8" />
@@ -124,7 +132,7 @@ async function handleRequest(request) {
 											<a href="#" class="image"><img src="images/ryan.png" alt="" /></a>
 											<div class="inner">
 												<h4>Ryan Mahoney W6RAM 
-												<br><i>Secretary<i></h4>
+												<br><i>Secretary</i></h4>
 												<p>Ryan is a Public Safety Systems Specialist for the San Ramon Valley Fire Protection District and member of the Communications Reserve program. He established CERT communications systems on GMRS and trains in their use and operation.</p>
 											</div>
 										</article>
