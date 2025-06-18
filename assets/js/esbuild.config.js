@@ -6,4 +6,5 @@ require('esbuild').build({
   external: ['@cloudflare/kv-asset-handler'],
   format: 'esm',
   target: 'es2022',
+  absWorkingDir: process.cwd(),
 }).catch(() => process.exit(1));
