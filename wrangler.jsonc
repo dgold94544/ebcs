@@ -5,5 +5,9 @@
   "assets": {
     "directory": "assets",
     "not_found_handling": "404-page"
+  },
+  "build": {
+    "command": "node esbuild.config.js"
   }
 }
+
