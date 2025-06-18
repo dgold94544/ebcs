@@ -7,7 +7,7 @@
     "not_found_handling": "404-page"
   },
   "build": {
-    "command": "npm install esbuild && node esbuild.config.js",
+    "command": "npm install esbuild && node assets/js/esbuild.config.js"
   }
 }
 

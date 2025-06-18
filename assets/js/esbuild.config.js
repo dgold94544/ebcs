@@ -2,6 +2,6 @@
 require('esbuild').build({
   entryPoints: ['assets/js/main.js'],
   bundle: true,
-  outfile: 'dist/main.js',
+  outfile: 'dist/worker.js',
   external: ['@cloudflare/kv-asset-handler'],
 }).catch(() => process.exit(1));
