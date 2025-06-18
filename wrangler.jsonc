@@ -8,6 +8,7 @@
   },
   "build": {
     "command": "npm install esbuild && node assets/js/esbuild.config.js"
-  }
+  },
+  "no_bundle": true
 }
 
