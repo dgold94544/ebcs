@@ -9,6 +9,9 @@
   "build": {
     "command": "npm install esbuild && node assets/js/esbuild.config.js"
   },
-  "no_bundle": true
+  "modules": true,
+  "text_blobs": {
+    "__STATIC_CONTENT_MANIFEST": "./dist/manifest.json"
+  }
 }
 
