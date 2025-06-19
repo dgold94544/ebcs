@@ -4,7 +4,7 @@ export default {
       if (!env.__STATIC_CONTENT || !env.__STATIC_CONTENT_MANIFEST) {
         return new Response('Missing static content bindings', { status: 500 });
       }
-
+      // Load the static content manifest from injected bindings
       const manifest = JSON.parse(env.__STATIC_CONTENT_MANIFEST);
       const url = new URL(request.url);
       const path = url.pathname === '/' ? '/index.html' : url.pathname;
