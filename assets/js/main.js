@@ -1,9 +1,8 @@
-import manifest from '__STATIC_CONTENT_MANIFEST';
-
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const path = url.pathname === '/' ? '/index.html' : url.pathname;
+    const manifest = JSON.parse(env.__STATIC_CONTENT_MANIFEST);
     const assetKey = manifest[path.slice(1)];
 
     if (assetKey && env.__STATIC_CONTENT) {
