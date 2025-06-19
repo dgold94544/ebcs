@@ -9,6 +9,10 @@
   "build": {
     "command": "npm install esbuild && node assets/js/esbuild.config.js"
   },
-  "no_bundle": true
+  "no_bundle": true,
+  "bindings": [
+    { "type": "kv_namespace", "name": "__STATIC_CONTENT", "namespace_id": "your-kv-namespace-id" },
+    { "type": "text_blob", "name": "__STATIC_CONTENT_MANIFEST", "part": "manifest" }
+]
 }
 
