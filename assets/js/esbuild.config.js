@@ -3,7 +3,7 @@ require('esbuild').build({
   entryPoints: ['assets/js/main.js'],
   bundle: true,
   outfile: 'dist/worker.js',
-  external: ['@cloudflare/kv-asset-handler'],
+  external: ['__STATIC_CONTENT_MANIFEST', '__STATIC_CONTENT'],
   format: 'esm',
   target: 'es2022',
   absWorkingDir: process.cwd(),
