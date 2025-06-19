@@ -8,10 +8,6 @@
   },
   "build": {
     "command": "npm install esbuild && node assets/js/esbuild.config.js"
-  },
-  "modules": true,
-  "text_blobs": {
-    "__STATIC_CONTENT_MANIFEST": "./dist/manifest.json"
   }
 }
 
