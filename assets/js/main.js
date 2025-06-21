@@ -1,5 +1,5 @@
 export default {
-  async fetch(request, env, ctx) {
-    return env.assets.fetch(request);
+  async fetch() {
+    return new Response("Hello from Cloudflare Worker!");
   }
-};
+}
