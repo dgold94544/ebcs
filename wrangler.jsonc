@@ -6,11 +6,5 @@
   "compatibility_date": "2025-06-18",
 
   // Entry point for the Worker
-  "main": "assets/js/main.js",
-
-  // Static assets config
-  "assets": {
-    "directory": "assets",
-    "not_found_handling": "404-page"
-  }
+  "main": "index.html"
 }
