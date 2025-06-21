@@ -7,6 +7,9 @@
 
   // Entry point for the Worker
   "main": "assets/js/main.js",
+  
+  //Workers dev environment
+  "workers_dev": true,
 
   // Static assets config
   "assets": {
