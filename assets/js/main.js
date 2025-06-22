@@ -29,16 +29,27 @@ export default {
             }
           ]
         };
+		
 
         const mailResponse = await fetch("https://api.mailchannels.net/tx/v1/send", {
           method: "POST",
+		  redirect: "follow",
           headers: {
 			"X-Api-Key": "GeVvUr3lhWF2Rb4xYnFFzKtGJYAPk7Jp",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+			"Accept": "application/json"
           },
           body: JSON.stringify(mailData)
 });
 
+/*
+fetch("https://api.mailchannels.net/tx/v1/send", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+*/
+
+/*
 if (mailResponse.ok) {
           return new Response("Message sent successfully! Expect a response from us within a week. Thanks!", { status: 200 });
         } else {
@@ -50,3 +61,4 @@ if (mailResponse.ok) {
     }
   }
 };
+*/
