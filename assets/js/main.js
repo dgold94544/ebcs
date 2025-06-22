@@ -33,7 +33,7 @@ export default {
         const mailResponse = await fetch("https://api.mailchannels.net/tx/v1/send", {
           method: "POST",
           headers: {
-			"X-Api-Key": "GeVvUr3lhWF2Rb4xYnFFzKtGJYAPk7Jp"
+			"X-Api-Key": "GeVvUr3lhWF2Rb4xYnFFzKtGJYAPk7Jp",
             "Content-Type": "application/json"
           },
           body: JSON.stringify(mailData)
