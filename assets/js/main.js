@@ -19,7 +19,7 @@ export default {
           ],
           from: {
             email: "noreply@ebcs.cc",
-            name: "Contact Form"
+            name: "Contact Form NO-REPLY"
           },
           subject: `New Contact Form message from ${name}`,
           content: [
@@ -33,22 +33,13 @@ export default {
         const mailResponse = await fetch("https://api.mailchannels.net/tx/v1/send", {
           method: "POST",
           headers: {
+			"X-Api-Key": "GeVvUr3lhWF2Rb4xYnFFzKtGJYAPk7Jp"
             "Content-Type": "application/json"
           },
           body: JSON.stringify(mailData)
-        });
+});
 
-        if (mailResponse.ok) {
-          return new Response("Message sent successfully!", { status: 200 });
-        } else {
-          const errorText = await mailResponse.text();
-          return new Response(`MailChannels error: ${mailResponse.status} - ${errorText}`, { status: 500 });
-        }
-      } catch (err) {
-        return new Response(`Worker error: ${err.message}`, { status: 500 });
-      }
-    }
-
-    return env.assets.fetch(request);
-  }
-};
+if (mailResponse.ok) {
+    return new Response("Message sent successfully! You can expect a response from EBCS within one week.", { status: 200 });
+	else return new Response("Message not delivered to EBCS.", { status: 500 });
+});
