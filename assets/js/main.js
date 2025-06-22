@@ -40,7 +40,13 @@ export default {
 });
 
 if (mailResponse.ok) {
-    return new Response("Message sent successfully! Expect a response from us within a week. Thanks!", { status: 200 });
-} else {
-	return new Response("Message not delivered to EBCS.", { status: 500 });
+          return new Response("Message sent successfully! Expect a response from us within a week. Thanks!", { status: 200 });
+        } else {
+          return new Response("Message not delivered to EBCS.", { status: 500 });
+        }
+      } catch (error) {
+        return new Response("Something went wrong while sending your message.", { status: 500 });
+      }
+    }
+  }
 };
