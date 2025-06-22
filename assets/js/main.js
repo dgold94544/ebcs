@@ -43,4 +43,4 @@ if (mailResponse.ok) {
     return new Response("Message sent successfully! Expect a response from us within a week. Thanks!", { status: 200 });
 } else {
 	return new Response("Message not delivered to EBCS.", { status: 500 });
-});
+};
