@@ -13,7 +13,7 @@
 
   // Static assets config
   "assets": {
-    "directory": "assets",
+    "directory": ".",
     "binding": "assets",
     "not_found_handling": "404-page"
   }
