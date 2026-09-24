@@ -6,14 +6,14 @@
   "compatibility_date": "2025-06-18",
 
   // Entry point for the Worker
-  "main": "js/main.js",
+  "main": "worker/main.js",
   
   //Workers dev environment
   "workers_dev": true,
 
   // Static assets config
   "assets": {
-    "directory": ".",
+    "directory": "./public",
     "binding": "assets",
     "not_found_handling": "404-page"
   }
