@@ -6,7 +6,7 @@
   "compatibility_date": "2025-06-18",
 
   // Entry point for the Worker
-  "main": "assets/js/main.js",
+  "main": "js/main.js",
   
   //Workers dev environment
   "workers_dev": true,
