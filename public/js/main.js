@@ -1,12 +1,8 @@
 export default {
   async fetch(request, env, ctx) {
-    const url = new URL(request.url);
-
-    // Contact form
-    if (request.method === 'POST' && url.pathname === '/send') {
+    if (request.method === 'POST' && new URL(request.url).pathname === '/send') {
       try {
         const formData = await request.formData();
-
         const name = formData.get('name');
         const email = formData.get('email');
         const message = formData.get('message');
@@ -33,43 +29,35 @@ export default {
             }
           ]
         };
+		
 
-        const mailResponse = await fetch(
-          "https://api.mailchannels.net/tx/v1/send",
-          {
-            method: "POST",
-            headers: {
-              "X-Api-Key": "YOUR_MAILCHANNELS_API_KEY",
-              "Content-Type": "application/json",
-              "Accept": "application/json"
-            },
-            body: JSON.stringify(mailData)
-          }
-        );
+        const mailResponse = await fetch("https://api.mailchannels.net/tx/v1/send", {
+          method: "POST",
+		  redirect: "follow",
+          headers: {
+			"X-Api-Key": "GeVvUr3lhWF2Rb4xYnFFzKtGJYAPk7Jp",
+            "Content-Type": "application/json",
+			"Accept": "application/json"
+          },
+          body: JSON.stringify(mailData)
+});
 
-        if (mailResponse.ok) {
-          return new Response(
-            "Message sent successfully! Expect a response from us within a week. Thanks!",
-            { status: 200 }
-          );
+/*
+fetch("https://api.mailchannels.net/tx/v1/send", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+*/
+
+
+if (mailResponse.ok) {
+          return new Response("Message sent successfully! Expect a response from us within a week. Thanks!", { status: 200 });
+        } else {
+          return new Response("Message not delivered to EBCS.", { status: 500 });
         }
-
-        return new Response(
-          "Message not delivered to EBCS.",
-          { status: 500 }
-        );
-
       } catch (error) {
-        console.error(error);
-
-        return new Response(
-          "Something went wrong while sending your message.",
-          { status: 500 }
-        );
+        return new Response("Something went wrong while sending your message.", { status: 500 });
       }
     }
-
-    // Serve the static website
-    return env.assets.fetch(request);
   }
 };

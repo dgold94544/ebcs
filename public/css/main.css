@@ -3314,3 +3314,9 @@ input, select, textarea {
 			}
 
 	}
+/* EBCS navigation selection */
+#header > nav ul li a.active,
+#header > nav ul li a:focus {
+	background: #ffffff !important;
+	color: #4acaa8 !important;
+}
