@@ -2774,6 +2774,11 @@ input, select, textarea {
 				#header > footer .icons li a {
 					color: #b7eadc;
 				}
+				
+/* Navigation panel */
+		#header {
+			background: #4acaa8;
+		}
 
 		#header > nav {
 			-moz-flex-grow: 1;
@@ -2793,24 +2798,33 @@ input, select, textarea {
 					display: block;
 					padding: 0;
 				}
-
+					/* Inactive navigation items */
 					#header > nav ul li a {
 						-moz-transition: none;
 						-webkit-transition: none;
 						-ms-transition: none;
 						transition: none;
 						border: 0;
+						background: #4acaa8;
 						color: #ffffff !important;
 						display: block;
 						padding: 0.85em 0;
 						text-decoration: none;
 					}
-
-						#header > nav ul li a.active {
-							background: #fff;
-							color: #4acaa8 !important;
-						}
-
+					/* Active navigation item */
+					#header > nav ul li a.active,
+					#header > nav ul li a:focus:not(.archive-link) {
+						background: #ffffff !important;
+						color: #4acaa8 !important;
+					}
+					
+					/* CCRA Archive - always inactive */
+					#header > nav ul li a.archive-link {
+						background: #4acaa8 !important;
+						color: #ffffff !important;
+						border-bottom: none !important;
+					}
+					
 					#header > nav ul li:first-child {
 						border-top: 0;
 					}
@@ -3315,8 +3329,15 @@ input, select, textarea {
 
 	}
 /* EBCS navigation selection */
-#header > nav ul li a.active,
-#header > nav ul li a:focus {
+#header > nav ul li a.active 
+#header > nav ul li a:focus:not(.archive-link){
 	background: #ffffff !important;
 	color: #4acaa8 !important;
+}
+
+
+@media screen and (min-width: 980px) {
+    #one > .image.main {
+        height: calc(20em + 8px);
+    }
 }

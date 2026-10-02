@@ -27,8 +27,9 @@
 						<li><a href="#two">What We Do Well</a></li>
 						<li><a href="#three">Our Board</a></li>
 						<li><a href="#four">Contact</a></li>
+						<li><a href="/archive/" class="archive-link">CCRA Archive</a></li>
 					</ul>
-				<li><a href="/archive/">CCRA Archive</a></li></nav>
+				</nav>
 				<footer>
 					<p class="company-address">
 					East Bay Communication Systems<br>
@@ -504,6 +505,87 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="/js/breakpoints.min.js"></script>
 			<script src="/js/util.js"></script>
 			<script src="/js/site.js"></script>
+			<script>
+				(function () {
 
+					function initNavigation() {
+
+						var navLinks = document.querySelectorAll(
+							'#header > nav a[href^="#"]'
+						);
+
+						var sections = document.querySelectorAll(
+							'#main > section[id]'
+						);
+
+						if (!navLinks.length || !sections.length) {
+							return;
+						}
+
+						function updateNavigation() {
+
+							var current = sections[0].id;
+
+							for (var i = 0; i < sections.length; i++) {
+
+								var rect = sections[i].getBoundingClientRect();
+
+								if (rect.top <= window.innerHeight * 0.35) {
+									current = sections[i].id;
+								}
+							}
+
+							/* Force Contact to become active at the bottom */
+							if (
+								window.innerHeight + window.pageYOffset >=
+								document.documentElement.scrollHeight - 5
+							) {
+								current = sections[sections.length - 1].id;
+							}
+
+							/* Update ONLY the four section links */
+							for (var j = 0; j < navLinks.length; j++) {
+
+								var href = navLinks[j].getAttribute('href');
+
+								if (href === '#' + current) {
+									navLinks[j].classList.add('active');
+								} else {
+									navLinks[j].classList.remove('active');
+								}
+							}
+
+							/*
+							 * Explicitly make sure Archive can never
+							 * receive the active class.
+							 */
+							var archive = document.querySelector(
+								'#header > nav a.archive-link'
+							);
+
+							if (archive) {
+								archive.classList.remove('active');
+							}
+						}
+
+						window.addEventListener('scroll', updateNavigation, {
+							passive: true
+						});
+
+						window.addEventListener('resize', updateNavigation);
+
+						window.addEventListener('pageshow', updateNavigation);
+
+						updateNavigation();
+					}
+
+					if (document.readyState === 'loading') {
+						document.addEventListener('DOMContentLoaded', initNavigation);
+					} else {
+						initNavigation();
+					}
+
+				})();
+				</script>
 	</body>
 </html>
