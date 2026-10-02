@@ -121,7 +121,7 @@
 											<div class="inner">
 												<h4>Daniel Goldstein KJ6KEU 
 												<br><i>Vice President Technology</i></h4>
-												<p>Dan has been in IT for over 35 years, and in cybersecurity for 25 years. He currently serves as the Administrative Sergeant for the Alameda County Sheriff's Communications Team, the California Region 2 Auxiliary Communications Mutual Aid Coordinator, and he serves as the ARRL East Bay Section Emergency Coordinator. Dan is also an elected Hayward City Council member.</p>
+												<p>Dan has been in IT for over 35 years, and in cybersecurity for 25 years. He currently serves as the Administrative Sergeant for the Alameda County Sheriff's Communications Team, the California Region 2 Auxiliary Communications Mutual Aid Coordinator, Executive Director of BEACON Exercise, and he serves as the ARRL East Bay Section Emergency Coordinator. Dan is also an elected Hayward City Council member.</p>
 											</div>
 										</article>
 									</div>
@@ -586,6 +586,43 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					}
 
 				})();
+				</script>
+				<script>
+				document.addEventListener('DOMContentLoaded', function () {
+
+					const navLinks = document.querySelectorAll(
+						'#nav a[href^="#"]'
+					);
+
+					navLinks.forEach(function (link) {
+
+						link.addEventListener('click', function (event) {
+
+							event.preventDefault();
+
+							const targetId = this.getAttribute('href');
+							const target = document.querySelector(targetId);
+
+							if (!target) return;
+
+							// Scroll to the section without creating a URL hash.
+							target.scrollIntoView({
+								behavior: 'smooth',
+								block: 'start'
+							});
+
+							// Keep the URL clean.
+							history.replaceState(
+								null,
+								'',
+								window.location.pathname + window.location.search
+							);
+
+						}, true);
+
+					});
+
+				});
 				</script>
 	</body>
 </html>
